@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title {
+    position: fixed;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 1;
+    background: rgb(255, 255, 255);
+    background: -moz-linear-gradient(180deg, rgba(255, 255, 255, 1) 57%, rgba(211, 211, 211, 0) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(255, 255, 255, 1) 57%, rgba(211, 211, 211, 0) 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 57%, rgba(211, 211, 211, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff", endColorstr="#d3d3d3", GradientType=1);
+}
+
+h1 {
+    margin: 10px auto;
+    text-align: center;
+}
+
+.container {
+    width: 600px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+/* List */
+ul {
+    margin-top: 70px;
+    counter-reset: index;
+    padding: 0;
+    max-width: 600px;
+}
+
+/* List element */
+li {
+    counter-increment: index;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    margin: 4px 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    opacity: .5;
+    transition: opacity .1s ease-out;
+}
+
+li:hover {
+    opacity: 1;
+}
+
+li::before {
+    content: counters(index, ".", decimal-leading-zero);
+    font-size: 1.5rem;
+    text-align: right;
+    font-weight: bold;
+    min-width: 50px;
+    padding-right: 12px;
+    font-variant-numeric: tabular-nums;
+    align-self: flex-start;
+    background-image: linear-gradient(to bottom, aquamarine, orangered);
+    background-attachment: fixed;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+li+li {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ====================== */
+/* ring loader */
+.lds-ring {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50px);
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    margin: 8px;
+    border: 8px solid rgb(135, 255, 75);
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #dfc transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

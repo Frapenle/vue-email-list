@@ -3,7 +3,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            emailNumbers: 50,
+            emailNumbers: 20,
             randomEmailsList: [],
         }
     },
@@ -24,8 +24,6 @@ createApp({
                 this.getRandomEmail();
             }
         }
-
-        
     },
     //call function at every reload page
     created() {
