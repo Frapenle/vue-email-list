@@ -12,7 +12,7 @@
 
 <body>
     <div id="app">
-        <ul v-show="randomEmailsList.length == 10">
+        <ul v-if="randomEmailsList.length == emailNumbers">
             <li v-for="mail in randomEmailsList">{{mail}}</li>
         </ul>
         
