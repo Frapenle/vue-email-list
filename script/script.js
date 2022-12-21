@@ -3,7 +3,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            randomEmail: null,
+            randomEmails: [],
         }
     },
 
@@ -14,16 +14,23 @@ createApp({
             // arrow function reference 'this' parent
                 .then( (response) => {
                     const result = response.data.response;
-                    this.randomEmail = response.data.response
-                    console.log(this)
+                    this.randomEmails = result
                 });
         },
+
+        createEmailList(){
+            for (let i = 0; i < 10; i++) {
+                const element = array[i];
+                
+            }
+            
+        }
 
         
     },
     //call function at every reload page
     created() {
-        this.getRandomEmail();
+        this.createEmailList();
     }
 
 }).mount('#app')
