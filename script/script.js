@@ -3,7 +3,8 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            randomEmails: [],
+            randomEmail: '',
+            randomEmailsList: [],
         }
     },
 
@@ -14,16 +15,15 @@ createApp({
             // arrow function reference 'this' parent
                 .then( (response) => {
                     const result = response.data.response;
-                    this.randomEmails = result
+                    this.randomEmail = result
+                    this.randomEmailsList.push(result)
                 });
         },
 
         createEmailList(){
             for (let i = 0; i < 10; i++) {
-                const element = array[i];
-                
+                this.getRandomEmail();
             }
-            
         }
 
         
